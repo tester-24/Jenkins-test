@@ -1,0 +1,17 @@
+{
+  "name": "nodemailer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test":"node_modules\\.bin\\cypress run",
+    "headedTest": "npm run test -- headed",
+    "chromeTest" :"npm run test -- --browser chrome",
+    "recordDashboardTest": "npm run test -- --record --key f8699bd4-bab1-48b3-841a-9d7037d8953b --reporter mochawesome",
+    "mochReportDashboard": "npm run test -- --record --key f8699bd4-bab1-48b3-841a-9d7037d8953b --reported cypress-mochawesome",
+    "generate-multi-cucumber-html-report":"node\\cucumber-html-report.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

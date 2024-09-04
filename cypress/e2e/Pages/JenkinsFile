@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    triggers {
+        cron('H 2 * * *')  // Runs daily at 2 AM
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-repository.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Run Cypress Tests') {
+            steps {
+                sh 'npx cypress run'
+            }
+        }
+    }
+}
