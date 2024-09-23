@@ -29,7 +29,7 @@ it('Comet_Jainam', () => {
     
     // 5) Tax P&L - Selecting - Equity
     cy.get('#ReportDropdown').click()
-    cy.get('[href="#/tax"]').click()
+    cy.get('[href="#/tax"]').click({force:true})
      
     //Select FY Year
      cy.get('span.k-input-value-text').eq(1).click({ force: true })
