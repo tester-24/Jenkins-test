@@ -12,8 +12,8 @@ module.exports = defineConfig({
 module.exports = defineConfig({
   //projectId: 'fr6xeg',
   //projectId: "7hxuzw",
-  //projectId: "rtg5p3",
-   projectId: "coukua"
+  projectId: "rtg5p3",
+   //projectId: "coukua"
   reporter: 'cypress-mochawesome-reporter',
   video: true,
   reporterOptions: {
