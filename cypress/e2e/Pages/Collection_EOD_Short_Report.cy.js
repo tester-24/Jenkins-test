@@ -38,6 +38,7 @@ it('Comet_Jainam', () => {
   //cy.wait(3000)
 
   //Select Category
+    cy.wait(1000)
   cy.get('.k-input-value-text').click({force:true})
   cy.get('select')
  // cy.wait(3000)
