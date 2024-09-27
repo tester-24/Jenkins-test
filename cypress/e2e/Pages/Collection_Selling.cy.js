@@ -31,6 +31,7 @@ it('Comet_Jainam', () => {
   cy.get('[href="#/collection"]').click()
   
   //Select Category
+      cy.wait(2000)
   cy.get('.k-input-value-text').click()
   cy.get('select')
  
