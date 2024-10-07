@@ -6,7 +6,7 @@ export class LoginPage {
     }
 
     enterPassword() {
-        cy.get('#LoginPassword').type('Jainam@1234')
+        cy.get('#LoginPassword').type('Jainam@123')
     }
 
     clickLogin() {
