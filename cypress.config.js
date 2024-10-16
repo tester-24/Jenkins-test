@@ -13,7 +13,8 @@ module.exports = defineConfig({
   //projectId: 'fr6xeg',
   //projectId: "7hxuzw",
  //projectId: "rtg5p3",
-   projectId: "coukua",
+   //projectId: "coukua",
+  projectId: "11ocww",
   reporter: 'cypress-mochawesome-reporter',
   video: true,
   reporterOptions: {
