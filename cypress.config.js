@@ -17,7 +17,8 @@ module.exports = defineConfig({
  // projectId: "11ocww",
   // projectId: "ca5wwc",
 // projectId: "xnpdh8",
-  projectId: "wjxjuw",
+  //projectId: "wjxjuw",
+   projectId: "pr3fsn",
   reporter: 'cypress-mochawesome-reporter',
   video: true,
   reporterOptions: {
