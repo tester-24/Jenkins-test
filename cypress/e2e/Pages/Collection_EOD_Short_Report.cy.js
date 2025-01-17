@@ -43,7 +43,7 @@ it('Comet_Jainam', () => {
   cy.get('#pin2').type(2)
   cy.get('#pin3').type(3)
   cy.get('#pin4').type(4)
- // cy.wait(3000);
+  cy.wait(2000);
    
    //cy.get('.continue_button_wrap > p').click()
    //cy.wait(3000)
