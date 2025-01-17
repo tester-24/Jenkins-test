@@ -16,24 +16,41 @@ it('Comet_Jainam', () => {
    // cy.get('.form_wrap').click()
     
     //Enter Pin
-   cy.wait(3000);
-    cy.get('[formcontrolname="otp1"]').type('1');
-    cy.get('[formcontrolname="otp2"]').type('2');
-    cy.get('[formcontrolname="otp3"]').type('3');
-    cy.get('[formcontrolname="otp4"]').type('4');
-    
+    cy.wait(2000);
+    cy.get('#pin1').type(1)
+    cy.get('#pin2').type(2)
+    cy.get('#pin3').type(3)
+    cy.get('#pin4').type(4)
+    cy.wait(5000)
+    // cy.get('.payin-btn > .ng-star-inserted').invoke("removeAttr", "target").click()
+     cy.window().then((win) => {
+         cy.stub(win, 'open').callsFake((url) => {
+           win.location.href = url;
+         });
+       });
+       cy.wait(2000)
+       cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
+       
+       // Verify that the page or URL is updated
+       cy.wait(4000)
+       cy.url().should('include', 'https://comet.jainam.in/#/corporate-actions');
+       Cypress.on('uncaught:exception', (err) => {
+         // returning false here prevents Cypress from
+         // failing the test
+         console.log('Cypress detected uncaught exception: ', err);
+         return false;
+       });
     // click on Reports
    cy.wait(4000)
     cy.get('#ReportDropdown').click({force:true})
-    cy.get('[href="#/tax"]').click()
+    cy.get('[href="#/tax"]').click({force:true})
     
     // 5) Tax P&L - Selecting - Equity
     cy.get('#ReportDropdown').click()
-    cy.get('[href="#/tax"]').click({force:true})
+    cy.get('[href="#/tax"]').click()
      
     //Select FY Year
-     cy.get('span.k-input-value-text').eq(1).click({ force: true })
-     .type("{downArrow}{Enter}")
+     cy.get('span.k-input-value-text').eq(1).click({ force: true }).type("{downArrow}{Enter}")
      
      //Click on view
      cy.get('.btn').click()
@@ -42,7 +59,7 @@ it('Comet_Jainam', () => {
    
 
      //Selecting Segmet - NSE_FNO
-     //cy.wait(1000)
+     cy.wait(1000)
     cy.get('span.k-input-value-text').eq(0).click({ force: true }).type("{downArrow}{Enter}")
     
     //Download 
@@ -61,5 +78,14 @@ it('Comet_Jainam', () => {
    
     //Download 
     //cy.get('.btn').click({ force: true })
+    cy.wait(500) 
+    // logout flow
+      // click on user profile 
+      cy.get('.user-icon').click({force:true})
+      cy.wait(500)
+      // click on logout 
+     cy.xpath('/html/body/app-root/app-layout/app-headerpanel/div/div/nav/div/ul/li[5]/div/div/div/div[2]/ul/li[5]/a').click({force:true})
+      // cy.get('.mt-4 > :nth-child(4)').click({force:true})
+      cy.wait(1000)
    
 })
