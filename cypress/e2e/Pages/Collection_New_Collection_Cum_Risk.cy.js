@@ -1,18 +1,32 @@
 /// <reference types="cypress"/>
 
 import { text } from "body-parser"
-import { LoginPage } from "./login_1.cy.js"
-const loginPage = new LoginPage
+//import { LoginPage } from "./login_1.cy.js"
+//const loginPage = new LoginPage
 
 it('Comet_Jainam', () => {
+   cy.clearCookies();
+  cy.wait(500)
     cy.visit('https://comet.jainam.in/#/startup')
-    cy.wait(3000)
+   
+    cy.reload()
+   cy.wait(3000)
     cy.get('.login-space-btn').click()
-
-    loginPage.enterUsername()
-    loginPage.enterPassword()
-    loginPage.clickLogin()
+    cy.clearCookies();
+    cy.wait(3000)
+     //Login Flow
+     //cy.wait(2000)
     
+     cy.xpath('/html/body/app-root/app-sign-in/div/div/div[2]/div/form/div[1]/kendo-textbox/input').type('1126')
+     
+     //click on continue button
+     cy.xpath('/html/body/app-root/app-sign-in/div/div/div[2]/div/form/button[1]').click()
+     
+     // enter password
+     cy.xpath('/html/body/app-root/app-sign-in/div/div/div[2]/app-sign-in-with-username/form/div/div/div/div/kendo-textbox/input').type('Jainam@123')
+     
+     //click on continue button
+     cy.xpath('/html/body/app-root/app-sign-in/div/div/div[2]/app-sign-in-with-username/form/div/button').click()
 
     //Pin Page    
     //cy.get('.form_wrap').click()
@@ -20,11 +34,16 @@ it('Comet_Jainam', () => {
  
   //Enter Pin
   cy.wait(2000);
-  cy.get('[formcontrolname="otp1"]').type('1');
-  cy.get('[formcontrolname="otp2"]').type('2');
-  cy.get('[formcontrolname="otp3"]').type('3');
-  cy.get('[formcontrolname="otp4"]').type('4');
+   // enter the pin 
+   cy.get('#pin1').type(1)
+   cy.get('#pin2').type(2)
+   cy.get('#pin3').type(3)
+   cy.get('#pin4').type(4)
   
+    //click on comet icon
+    cy.wait(500) 
+    cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
+    .click({timeout:3000});  
    
    
    //cy.get('.continue_button_wrap > p').click()
@@ -41,15 +60,18 @@ it('Comet_Jainam', () => {
   //Click on Collection
   cy.get('[href="#/collection"]').click()
   
+   //Select Category
+   cy.get('.k-input-value-text').click()
+   //cy.get('.k-list-item ng-star-inserted').select('index','2')
+   cy.contains('span','New Collection Cum Risk').click();
 
-  //Select Category
-  cy.wait(2000) 
-  cy.get('.k-input-value-text').click()
-  cy.get('select')
+//   //Select Category
+//   cy.get('.k-input-value-text').click()
+//   cy.get('select')
  
 
-  cy.get('.k-input-value-text').click()
-  .type("{downArrow}{downArrow}{Enter}")
+//   cy.get('.k-input-value-text').click()
+//   .type("{downArrow}{downArrow}{Enter}")
  
    
 
@@ -83,5 +105,14 @@ it('Comet_Jainam', () => {
    }
    // Scrolling to top
      cy.scrollTo('top')
+
+        // logout
+      // click on user profile 
+      cy.get('.user-icon').click({force:true})
+      cy.wait(1000)
+     cy.xpath('/html/body/app-root/app-layout/app-headerpanel/div/div/nav/div/ul/li[6]/div/div/div/div[2]/ul/li[4]/a').click({force:true})
+      // cy.get('.mt-4 > :nth-child(4)').click({force:true})
+      cy.wait(1000)
+
 
   })
