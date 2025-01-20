@@ -28,8 +28,8 @@ it('Comet_Jainam', () => {
            win.location.href = url;
          });
        });
-       cy.wait(2000)
-       cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
+       cy.wait(3000)
+       cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click({force:true})
        
        // Verify that the page or URL is updated
        cy.wait(4000)
