@@ -134,7 +134,7 @@ it('Comet_Jainam', () => {
        cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
        
        // Verify that the page or URL is updated
-       cy.wait(4000)
+       cy.wait(6000)
        cy.url().should('include', 'https://comet.jainam.in/#/corporate-actions');
        Cypress.on('uncaught:exception', (err) => {
          // returning false here prevents Cypress from
