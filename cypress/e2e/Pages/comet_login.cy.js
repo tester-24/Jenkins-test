@@ -2,7 +2,7 @@ export class LoginPage {
 
     enterUsername() {
      //Enter the userid
-  cy.wait(1500)
+  cy.wait(2500)
   cy.xpath('/html[1]/body[1]/app-root[1]/app-sign-in[1]/div[1]/div[1]/div[2]/div[1]/form[1]/div[1]/kendo-textbox[1]/input[1]').type('M3903')
   
   //click on continue button
