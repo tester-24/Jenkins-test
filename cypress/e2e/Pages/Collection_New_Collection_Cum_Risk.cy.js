@@ -13,7 +13,7 @@ it('Comet_Jainam', () => {
    cy.wait(3000)
     cy.get('.login-space-btn').click()
     cy.clearCookies();
-    cy.wait(3000)
+    cy.wait(5000)
      //Login Flow
      //cy.wait(2000)
     
