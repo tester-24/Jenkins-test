@@ -3,7 +3,7 @@
 import { trimEnd } from "lodash"
 import { LoginPage } from "./comet_login.cy.js"
 const loginPage = new LoginPage
-
+describe("Ledger_Report", () => {
 it('Comet_Jainam', () => {
     cy.visit('https://comet.jainam.in/#/startup')
     cy.wait(3000)
@@ -444,5 +444,5 @@ cy.wait(5000)
      cy.xpath('/html/body/app-root/app-layout/app-headerpanel/div/div/nav/div/ul/li[5]/div/div/div/div[2]/ul/li[5]/a').click({force:true})
       // cy.get('.mt-4 > :nth-child(4)').click({force:true})
       cy.wait(1000)
-
+})
  })
