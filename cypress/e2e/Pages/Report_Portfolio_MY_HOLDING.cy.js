@@ -2,7 +2,7 @@
 
 import { LoginPage } from "./comet_login.cy.js"
 const loginPage = new LoginPage
-
+describe(" Portfolio_MY_HOLDING", () => {
 it('Comet_Jainam', () => {
     cy.visit('https://comet.jainam.in/#/startup')
    cy.wait(1000);
@@ -382,4 +382,4 @@ it('Comet_Jainam', () => {
       cy.wait(1000)
     })
     
-
+})
