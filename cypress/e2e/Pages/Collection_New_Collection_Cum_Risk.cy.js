@@ -3,7 +3,7 @@
 import { text } from "body-parser"
 //import { LoginPage } from "./login_1.cy.js"
 //const loginPage = new LoginPage
-
+describe(" Collection_New_ Collection_ Cum_ Risk", () => {
 it('Comet_Jainam', () => {
    cy.clearCookies();
   cy.wait(500)
@@ -114,5 +114,5 @@ it('Comet_Jainam', () => {
       // cy.get('.mt-4 > :nth-child(4)').click({force:true})
       cy.wait(1000)
 
-
+})
   })
