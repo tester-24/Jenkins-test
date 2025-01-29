@@ -2,7 +2,7 @@
 
 import { LoginPage } from "./login_1.cy.js"
 const loginPage = new LoginPage
-
+describe("Collection_ Peak_ Short", () => {
 it('Comet_Jainam', () => {
     cy.visit('https://comet.jainam.in/#/startup')
     cy.wait(3000)
@@ -88,5 +88,5 @@ cy.wait(12000)
       // cy.get('.mt-4 > :nth-child(4)').click({force:true})
       cy.wait(1000)
 
-
+})
 })
