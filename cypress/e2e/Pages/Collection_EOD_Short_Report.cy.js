@@ -2,7 +2,7 @@
 
 //import { LoginPage } from "./login_1.cy.js"
 //const loginPage = new LoginPage
-
+describe("Collection_ EOD_ Short", () => {
 it('Comet_Jainam', () => {
   cy.clearCookies();
   cy.wait(500)
@@ -137,5 +137,5 @@ it('Comet_Jainam', () => {
   //.cy.get('.btn > .ng-star-inserted').click()
   //.cy.wait(3000)
    
-   
+})
 })
