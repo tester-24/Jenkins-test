@@ -2,7 +2,8 @@
 
 import { LoginPage } from "./comet_login.cy.js"
 const loginPage = new LoginPage
-describe(" Portfolio_MY_HOLDING", () => {
+describe('My Holding ',() =>
+  {
 it('Comet_Jainam', () => {
     cy.visit('https://comet.jainam.in/#/startup')
    cy.wait(1000);
@@ -118,31 +119,25 @@ it('Comet_Jainam', () => {
 
 
     //Enter Pin
-    cy.wait(2000);
+    //cy.wait(2000);
     cy.get('#pin1').type(1)
     cy.get('#pin2').type(2)
     cy.get('#pin3').type(3)
     cy.get('#pin4').type(4)
-    cy.wait(5000)
+    cy.wait(6000)
     // cy.get('.payin-btn > .ng-star-inserted').invoke("removeAttr", "target").click()
+    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/a[1]/span[1]/img[2]").click({force:true})
+     cy.wait(500)
+     //cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/a[1]/span[1]/img[2]").should('be.visible')
+     cy.wait(500)
      cy.window().then((win) => {
-         cy.stub(win, 'open').callsFake((url) => {
-           win.location.href = url;
-         });
-       });
-       cy.wait(5000)
-       cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
-       
-       // Verify that the page or URL is updated
-       cy.wait(6000)
-       cy.url().should('include', 'https://comet.jainam.in/#/corporate-actions');
-       Cypress.on('uncaught:exception', (err) => {
-         // returning false here prevents Cypress from
-         // failing the test
-         console.log('Cypress detected uncaught exception: ', err);
-         return false;
-       });
-  cy.wait(1000);
+            cy.stub(win, 'open').callsFake((url) => {
+              win.location.href = url;
+            });
+          });
+          cy.wait(1000)
+       //  cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
+     cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/div[1]/ul[1]/li[1]/a[1]').click({force:true})
 
   cy.window().then((win) => {
       const startTime = performance.now(); // Capture start time
@@ -174,8 +169,8 @@ it('Comet_Jainam', () => {
 
 
     // click on Reports
-    cy.wait(4000)
-    cy.get('#ReportDropdown').click({ force: true })
+   // cy.wait(4000)
+    //cy.get('#ReportDropdown').click({ force: true })
   })
    cy.wait(1000);
 
@@ -199,7 +194,7 @@ it('Comet_Jainam', () => {
   
        })
     //cy.wait(1000)
-    cy.get('[href="#/portfolio"]').click()
+   // cy.get('[href="#/portfolio"]').click()
     //cy.wait(2000)
 
 
@@ -211,7 +206,7 @@ it('Comet_Jainam', () => {
 
     //Click on My Holding
     cy.wait(3000)
-    cy.get('span.k-input-value-text').eq(0)
+   // cy.get('span.k-input-value-text').eq(0)
     cy.get('span.k-input-inner span').eq(0)
     cy.get('kendo-dropdownlist[name="CategoryName"] span').eq(1)
      cy.wait(1000)
@@ -240,7 +235,7 @@ it('Comet_Jainam', () => {
     })
 
 
-   cy.wait(5000)
+   cy.wait(2000)
    cy.scrollTo('center')
 
    // cy.wait(3000)
@@ -382,4 +377,4 @@ it('Comet_Jainam', () => {
       cy.wait(1000)
     })
     
-})
+  })
