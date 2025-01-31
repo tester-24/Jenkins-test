@@ -22,33 +22,19 @@ it('Comet_Jainam', () => {
     cy.get('#pin3').type(3)
     cy.get('#pin4').type(4)
     cy.wait(5000)
-    // cy.get('.payin-btn > .ng-star-inserted').invoke("removeAttr", "target").click()
+    cy.xpath("//a[@class='nav_title text_decoration_none d_inline_block']//img[@alt='reports']").click({force:true})
+    // cy.wait(500)
+     cy.xpath("//a[@class='nav_title text_decoration_none d_inline_block']//img[@alt='reports']").should('be.visible')
+     cy.wait(500)
      cy.window().then((win) => {
-         cy.stub(win, 'open').callsFake((url) => {
-           win.location.href = url;
-         });
-       });
-       cy.wait(5000)
-       cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click({force:true})
-       
-       // Verify that the page or URL is updated
-       cy.wait(4000)
-       cy.url().should('include', 'https://comet.jainam.in/#/corporate-actions');
-       Cypress.on('uncaught:exception', (err) => {
-         // returning false here prevents Cypress from
-         // failing the test
-         console.log('Cypress detected uncaught exception: ', err);
-         return false;
-       });
-    // click on Reports
-   cy.wait(4000)
-    cy.get('#ReportDropdown').click({force:true})
-    cy.get('[href="#/tax"]').click({force:true})
-    
-    // 5) Tax P&L - Selecting - Equity
-    cy.get('#ReportDropdown').click()
-    cy.get('[href="#/tax"]').click()
-     
+            cy.stub(win, 'open').callsFake((url) => {
+              win.location.href = url;
+            });
+          });
+          cy.wait(1000)
+       //  cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
+     cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[3]/div[1]/ul[1]/li[5]/a[1]').click({force:true})
+
     //Select FY Year
      cy.get('span.k-input-value-text').eq(1).click({ force: true }).type("{downArrow}{Enter}")
      
@@ -87,5 +73,6 @@ it('Comet_Jainam', () => {
      cy.xpath('/html/body/app-root/app-layout/app-headerpanel/div/div/nav/div/ul/li[5]/div/div/div/div[2]/ul/li[5]/a').click({force:true})
       // cy.get('.mt-4 > :nth-child(4)').click({force:true})
       cy.wait(1000)
+   
 })
 })
