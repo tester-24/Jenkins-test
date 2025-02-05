@@ -9,11 +9,11 @@ it('Comet_Jainam', () => {
   cy.wait(500)
     cy.visit('https://comet.jainam.in/#/startup')
    
-    cy.reload()
-   cy.wait(3000)
+    //cy.reload()
+   cy.wait(500)
     cy.get('.login-space-btn').click()
     cy.clearCookies();
-    cy.wait(5000)
+    cy.wait(500)
      //Login Flow
      //cy.wait(2000)
     
@@ -41,9 +41,9 @@ it('Comet_Jainam', () => {
    cy.get('#pin4').type(4)
   
     //click on comet icon
-    cy.wait(2000) 
-    cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
-    .click({timeout:3000});  
+    // cy.wait(500) 
+    // cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
+    // .click({timeout:3000});  
    
    
    //cy.get('.continue_button_wrap > p').click()
@@ -63,7 +63,8 @@ it('Comet_Jainam', () => {
    //Select Category
    cy.get('.k-input-value-text').click()
    //cy.get('.k-list-item ng-star-inserted').select('index','2')
-   cy.contains('span','New Collection Cum Risk').click();
+   cy.wait(500)
+   cy.contains('span','New Collection Cum Risk').click({force:true});
 
 //   //Select Category
 //   cy.get('.k-input-value-text').click()
@@ -114,5 +115,7 @@ it('Comet_Jainam', () => {
       // cy.get('.mt-4 > :nth-child(4)').click({force:true})
       cy.wait(1000)
 
-})
+
+  })
+
   })
