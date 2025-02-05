@@ -124,20 +124,25 @@ it('Comet_Jainam', () => {
     cy.get('#pin2').type(2)
     cy.get('#pin3').type(3)
     cy.get('#pin4').type(4)
-    cy.wait(6000)
+    cy.wait(3000)
+     // click on report and select global report
+    // 4) Global Report
+   // cy.get('#ReportDropdown').click()
+   // cy.get('[href="#/pnl"]').click()
+   // cy.wait(3000)
     // cy.get('.payin-btn > .ng-star-inserted').invoke("removeAttr", "target").click()
-    cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/a[1]/span[1]/img[2]").click({force:true})
-     cy.wait(500)
-     //cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/a[1]/span[1]/img[2]").should('be.visible')
-     cy.wait(500)
-     cy.window().then((win) => {
-            cy.stub(win, 'open').callsFake((url) => {
-              win.location.href = url;
-            });
-          });
-          cy.wait(1000)
-       //  cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
-     cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/div[1]/ul[1]/li[1]/a[1]').click({force:true})
+    // cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/a[1]/span[1]/img[2]").click({force:true})
+    //  cy.wait(500)
+    //  //cy.xpath("/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/a[1]/span[1]/img[2]").should('be.visible')
+    //  cy.wait(500)
+    //  cy.window().then((win) => {
+    //         cy.stub(win, 'open').callsFake((url) => {
+    //           win.location.href = url;
+    //         });
+    //       });
+    //       cy.wait(1000)
+    //    //  cy.xpath('/html/body/app-root/app-layout/div/div/app-dashboard/div[2]/div/app-invest-with-us/div/a[4]').click()
+    //  cy.xpath('/html[1]/body[1]/app-root[1]/app-layout[1]/app-client-header-navbar[1]/div[1]/div[1]/nav[1]/div[2]/ul[1]/li[2]/div[1]/ul[1]/li[1]/a[1]').click({force:true})
 
   cy.window().then((win) => {
       const startTime = performance.now(); // Capture start time
@@ -168,11 +173,11 @@ it('Comet_Jainam', () => {
 //    cy.wait(4000);
 
 
-    // click on Reports
-   // cy.wait(4000)
-    //cy.get('#ReportDropdown').click({ force: true })
+   // click on Reports
+   cy.wait(2000)
+    cy.get('#ReportDropdown').click({ force: true })
   })
-   cy.wait(1000);
+ //  cy.wait(1000);
 
     cy.window().then((win) => {
         const startTime = performance.now(); // Capture start time
@@ -200,12 +205,12 @@ it('Comet_Jainam', () => {
 
     // // 2) Portfolio
     // cy.get('#ReportDropdown').click()
-    // cy.get('[href="#/portfolio"]').click()
+     cy.get('[href="#/portfolio"]').click()
     // cy.wait(3000)
 
 
     //Click on My Holding
-    cy.wait(3000)
+    cy.wait(1000)
    // cy.get('span.k-input-value-text').eq(0)
     cy.get('span.k-input-inner span').eq(0)
     cy.get('kendo-dropdownlist[name="CategoryName"] span').eq(1)
@@ -377,4 +382,6 @@ it('Comet_Jainam', () => {
       cy.wait(1000)
     })
     
+
+
   })
