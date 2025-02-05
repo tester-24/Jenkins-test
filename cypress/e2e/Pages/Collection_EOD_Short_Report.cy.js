@@ -8,13 +8,13 @@ it('Comet_Jainam', () => {
   cy.wait(500)
     cy.visit('https://comet.jainam.in/#/startup')
     //cy.reload()
-   cy.wait(3000)
+  cy.wait(1000)
     cy.get('.login-space-btn').click()
-    cy.reload()
+    //cy.reload()
     cy.clearCookies();
-    cy.wait(3000)
+    //cy.wait(3000)
      //Login Flow
-    // cy.wait(2000)
+    cy.wait(500)
     
      cy.xpath('/html/body/app-root/app-sign-in/div/div/div[2]/div/form/div[1]/kendo-textbox/input').type('1126')
      
@@ -43,15 +43,15 @@ it('Comet_Jainam', () => {
   cy.get('#pin2').type(2)
   cy.get('#pin3').type(3)
   cy.get('#pin4').type(4)
-  cy.wait(2000);
+ // cy.wait(3000);
    
    //cy.get('.continue_button_wrap > p').click()
    //cy.wait(3000)
     
-   //click on comet icon
-     cy.wait(500) 
-     cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
-     .click({timeout:3000});  
+  //  //click on comet icon
+  //    cy.wait(500) 
+  //    cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
+  //    .click({timeout:3000});  
     // cy.visit('https://comet.jainam.in/#/RedirectToComet/jplus?Zl8uVBZFYw2xpegWIjf2UaiGgzCvXQntxK4a/FT4pfdn/d9oAaRVYeGTUJKEklroRkjuT4cvxyEvjpOQYC/CQA9vz8yqK02fBUdkVxiJh5XlasywT7QScXNANGNNqGsuiaK49dMyW8hFN9/XEbmH6w==')
 
 
@@ -137,5 +137,7 @@ it('Comet_Jainam', () => {
   //.cy.get('.btn > .ng-star-inserted').click()
   //.cy.wait(3000)
    
+   
 })
+
 })
