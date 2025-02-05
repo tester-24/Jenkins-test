@@ -23,10 +23,10 @@ it('Comet_Jainam', () => {
   cy.get('#pin3').type(3)
   cy.get('#pin4').type(4)
 
-   //click on comet icon
-   cy.wait(2000) 
-   cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
-   .click({timeout:3000});  
+  //  //click on comet icon
+  //  cy.wait(500) 
+  //  cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
+  //  .click({timeout:3000});  
   //Click on Partner
   cy.wait(4000)
   cy.get('#PartnerDropdown').click({ force: true })
@@ -88,6 +88,7 @@ it('Comet_Jainam', () => {
      cy.xpath('/html/body/app-root/app-layout/app-headerpanel/div/div/nav/div/ul/li[6]/div/div/div/div[2]/ul/li[4]/a').click({force:true})
       // cy.get('.mt-4 > :nth-child(4)').click({force:true})
       cy.wait(1000)
-})
 
+
+})
 })
