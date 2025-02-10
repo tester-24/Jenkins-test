@@ -52,7 +52,7 @@ it('Comet_Jainam', () => {
      cy.wait(500) 
      cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
      .click({timeout:3000});  
-  cy.visit('https://comet.jainam.in/#/RedirectToComet/jplus?Zl8uVBZFYw2xpegWIjf2UaiGgzCvXQntxK4a/FT4pfdn/d9oAaRVYeGTUJKEklroRkjuT4cvxyEvjpOQYC/CQA9vz8yqK02fBUdkVxiJh5XlasywT7QScXNANGNNqGsuiaK49dMyW8hFN9/XEbmH6w==')
+ // cy.visit('https://comet.jainam.in/#/RedirectToComet/jplus?Zl8uVBZFYw2xpegWIjf2UaiGgzCvXQntxK4a/FT4pfdn/d9oAaRVYeGTUJKEklroRkjuT4cvxyEvjpOQYC/CQA9vz8yqK02fBUdkVxiJh5XlasywT7QScXNANGNNqGsuiaK49dMyW8hFN9/XEbmH6w==')
 
 
 
