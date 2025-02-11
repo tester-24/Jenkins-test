@@ -26,7 +26,7 @@ it('Comet_Jainam', () => {
   cy.get('#pin4').type(4)
 
   //click on comet icon
-   cy.wait(3000) 
+   cy.wait(4000) 
    cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
    .click({timeout:3000});  
 
