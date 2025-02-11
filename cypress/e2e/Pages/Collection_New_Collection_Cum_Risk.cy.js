@@ -12,7 +12,7 @@ it('Comet_Jainam', () => {
   //cy.wait(500)
  // cy.get('.login-space-btn').click()
  // cy.clearCookies();
-  cy.wait(500)
+  cy.wait(1000)
   //Login Flow
   //cy.wait(2000)
 
@@ -40,7 +40,7 @@ it('Comet_Jainam', () => {
   cy.get('#pin4').type(4)
 
   //click on comet icon
-  cy.wait(500) 
+  cy.wait(3000) 
   cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
   .click({timeout:3000});  
 
