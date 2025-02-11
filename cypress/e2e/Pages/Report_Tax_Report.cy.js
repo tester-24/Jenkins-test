@@ -21,7 +21,7 @@ it('Comet_Jainam', () => {
   cy.get('#pin2').type(2)
   cy.get('#pin3').type(3)
   cy.get('#pin4').type(4)
-  cy.wait(3000)
+  cy.wait(7000)
   // click on report and select tax p and l  report
 
  // cy.get('#ReportDropdown').click({ force: true })
