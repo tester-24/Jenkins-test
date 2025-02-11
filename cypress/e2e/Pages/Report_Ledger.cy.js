@@ -25,7 +25,7 @@ it('Comet_Jainam', () => {
   cy.get('#pin2').type(2)
   cy.get('#pin3').type(3)
   cy.get('#pin4').type(4)
-  cy.wait(3000)
+  cy.wait(4000)
   //cy.get('.payin-btn > .ng-star-inserted').invoke("removeAttr", "target").click()
   cy.xpath("//a[@class='nav_title text_decoration_none d_inline_block']//img[@alt='reports']").click({force:true})
        // cy.wait(500)
