@@ -44,6 +44,10 @@ it('Comet_Jainam', () => {
   cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
   .click({timeout:3000});  
 
+  cy.wait(2000);
+  cy.xpath("//button[@aria-label='Close']").click({force:true});
+
+
 
   //cy.get('.continue_button_wrap > p').click()
   //cy.wait(6000)
