@@ -54,6 +54,9 @@ it('Comet_Jainam', () => {
      .click({timeout:1000});  
  // cy.visit('https://comet.jainam.in/#/RedirectToComet/jplus?Zl8uVBZFYw2xpegWIjf2UaiGgzCvXQntxK4a/FT4pfdn/d9oAaRVYeGTUJKEklroRkjuT4cvxyEvjpOQYC/CQA9vz8yqK02fBUdkVxiJh5XlasywT7QScXNANGNNqGsuiaK49dMyW8hFN9/XEbmH6w==')
 
+  cy.wait(2000);
+  cy.xpath("//button[@aria-label='Close']").click({force:true});
+
 
 
   //Click on PARTNERS
