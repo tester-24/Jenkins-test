@@ -47,7 +47,7 @@ it('Comet_Jainam', () => {
   // tag: smoke
 
   //Click on Collection
-  cy.get('[href="#/collection"]').click()
+  cy.get('[href="#/collection"]').click({ force: true })
 
 
   // //Select Category
