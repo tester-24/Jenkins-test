@@ -31,11 +31,16 @@ it('Comet_Jainam', () => {
    .click({timeout:3000});  
 
 
+   cy.wait(2000);
+ cy.xpath("//button[@aria-label='Close']").click({force:true});
+
+
+  
   //cy.get('.continue_button_wrap > p').click()
 
 
   //Click on Partner
-  cy.wait(1000)
+  cy.wait(2000)
   cy.get('#PartnerDropdown').click({ force: true })
 
 
