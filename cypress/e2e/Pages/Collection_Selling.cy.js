@@ -27,13 +27,17 @@ it('Comet_Jainam', () => {
    cy.wait(4000) 
    cy.xpath('/html/body/app-layout/app-dashboard/section/div/div/div/div/a[3]').invoke("removeAttr", "target") // Remove target="_blank" to avoid opening a new tab
    .click({timeout:3000});  
+
+  cy.wait(2000);
+ cy.xpath("//button[@aria-label='Close']").click({force:true});
+
   //Click on Partner
   cy.wait(4000)
   cy.get('#PartnerDropdown').click({ force: true })
 
 
   //Click on Collection
-  cy.get('[href="#/collection"]').click()
+  cy.get('[href="#/collection"]').click({ force: true })
 
 
   //Select Category
