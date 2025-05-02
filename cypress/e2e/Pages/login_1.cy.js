@@ -11,7 +11,7 @@ export class LoginPage {
     }
 
     enterPassword() {
-        cy.xpath('/html/body/app-root/app-sign-in/div/div/div[2]/app-sign-in-with-username/form/div/div/div/div/kendo-textbox/input').type('Jainam@123')
+        cy.xpath('/html/body/app-root/app-sign-in/div/div/div[2]/app-sign-in-with-username/form/div/div/div/div/kendo-textbox/input').type('J@inam$789')
     }
 
     clickLogin() {
